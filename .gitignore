@@ -1,4 +1,8 @@
 .vs/
+.vscode/
 packages/
 obj/
 bin/
+
+# Project-specific excludes
+data/
