@@ -1,4 +1,9 @@
 .vs/
+.vscode/
 packages/
 obj/
 bin/
+
+# Project-specific ignores
+data/
+www/
