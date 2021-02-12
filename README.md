@@ -1,9 +1,10 @@
 **NOTE:** This project will soon be renamed to HttpCore in favor of just WebServer.
 
 # WebServer
-A small HTTP server written in C# on .NET 5.0.
+A small [HTTP server](https://en.wikipedia.org/wiki/Web_server) written in C# on
+[.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
 
-**NOTE:** This project has not been tested in a production environment, I do not
+**NOTE:** This project has **not** been tested in a production environment, I do not
 recommend using it as such!
 
 ## Getting Started
@@ -18,7 +19,8 @@ Here's how it works:
 - This response is sent back to the browser;
 - The browser will display the received response in the form of a web page!
 
-In order to get working on this project, you'll need to have .NET 5.0 installed.
+In order to get working on this project, you'll need to have
+[.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0) installed.
 
 ### What's what?
 The program's entry point is located in the `Program.cs` file.
