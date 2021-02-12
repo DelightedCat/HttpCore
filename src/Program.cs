@@ -16,10 +16,10 @@ namespace WebServer
         private static void Main()
         {
             _logger = new Logger();
-            
+
             string configFilePath = Path.Combine(Environment.CurrentDirectory, "data", "config.json");
             _logger.Write(string.Format("Reading config from {0}...", configFilePath));
-            
+
             if (File.Exists(configFilePath))
             {
                 string text = File.ReadAllText(configFilePath);

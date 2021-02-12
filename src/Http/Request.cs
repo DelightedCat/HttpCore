@@ -36,7 +36,7 @@ namespace WebServer.Http
 
             if (status.Length < 2)
                 return null;
-            
+
             return new Request(status[0], status[1]);
         }
 

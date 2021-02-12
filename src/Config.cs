@@ -12,7 +12,7 @@ namespace WebServer
         public string Index { get; set; }
 
         public static Config Default
-        { 
+        {
             get
             {
                 return new Config
