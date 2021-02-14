@@ -1,6 +1,4 @@
-**NOTE:** This project will soon be renamed to HttpCore in favor of just WebServer.
-
-# WebServer
+# HttpCore
 A small [HTTP server](https://en.wikipedia.org/wiki/Web_server) written in C# on
 [.NET 5.0](https://dotnet.microsoft.com/download/dotnet/5.0).
 

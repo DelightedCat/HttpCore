@@ -4,9 +4,9 @@ using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
-using WebServer.Http;
+using HttpCore.Http;
 
-namespace WebServer
+namespace HttpCore
 {
     public class Program
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
-using WebServer.Web;
+using HttpCore.Web;
 
-namespace WebServer.Http
+namespace HttpCore.Http
 {
     public class Response
     {
@@ -54,7 +54,7 @@ namespace WebServer.Http
         public override string ToString()
         {
             var builder = new StringBuilder();
-            
+
             builder.Append($"HTTP/1.1 {Status.ToString()} {responseCodes[Status] ?? string.Empty}\r\n");
 
             foreach (var (key, value) in Headers)

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace WebServer.Web
+namespace HttpCore.Web
 {
     public static class Mime
     {
