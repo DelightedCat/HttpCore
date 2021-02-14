@@ -18,13 +18,13 @@ namespace WebServer.Http
             //byte[] buffer = new byte[1024];
 
             Span<byte> buffer = stackalloc byte[1024];
-            
+
             var builder = new StringBuilder();
 
             do
             {
                 var length = stream.Read(buffer);
-                
+
                 builder.Append(Encoding.ASCII.GetString(buffer));
             }
             while (stream.DataAvailable);
@@ -35,7 +35,6 @@ namespace WebServer.Http
         private static Request Parse(string input)
         {
             var lines = input.Split("\r\n");
-            
             var status = lines[0].Split(' ');
 
             return status.Length < 2 ? null : new Request(status[0], status[1]);
@@ -44,7 +43,7 @@ namespace WebServer.Http
         private Request(string method, string uri)
         {
             Method = method;
-            
+
             Uri = uri;
         }
     }
