@@ -2,18 +2,11 @@
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
-using HttpCore.Web;
 
 namespace HttpCore.Http
 {
     public class Response
     {
-        private readonly Dictionary<int, string> responseCodes = new Dictionary<int, string>()
-        {
-            { 200, "OK" }, { 301, "Permanently Moved" }, { 302, "Temporarily Moved" }, { 403, "Forbidden" }, { 404, "Not Found" }, { 418, "I'm a Teapot" },
-            { 500, "Internal Server Error" }, { 502, "Bad Gateway" }, { 503, "Service Temporarily Unavailable" }
-        };
-
         public int Status { get; set; }
 
         public Dictionary<string, string> Headers { get; set; }
@@ -27,7 +20,7 @@ namespace HttpCore.Http
                 status = 404;
 
             string filePathExtension = Path.GetExtension(filePath);
-            return new Response(status, Mime.GetFromExtension(filePathExtension));
+            return new Response(status, Context.GetMimeType(filePathExtension, "text/html")); // TODO: Update default content type here
         }
 
         private Response()
@@ -53,7 +46,7 @@ namespace HttpCore.Http
         public override string ToString()
         {
             StringBuilder builder = new StringBuilder();
-            builder.Append($"HTTP/1.1 {Status.ToString()} {responseCodes[Status] ?? string.Empty}\r\n");
+            builder.Append($"HTTP/1.1 {Status.ToString()} {Context.GetResponseCode(Status, string.Empty)}\r\n");
 
             foreach (KeyValuePair<string, string> header in Headers)
                 builder.Append($"{header.Key}: {header.Value}\r\n");
