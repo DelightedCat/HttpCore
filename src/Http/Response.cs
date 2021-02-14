@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 using System.Text;
@@ -53,12 +52,11 @@ namespace HttpCore.Http
 
         public override string ToString()
         {
-            var builder = new StringBuilder();
-
+            StringBuilder builder = new StringBuilder();
             builder.Append($"HTTP/1.1 {Status.ToString()} {responseCodes[Status] ?? string.Empty}\r\n");
 
-            foreach (var (key, value) in Headers)
-                builder.Append($"{key}: {value}\r\n");
+            foreach (KeyValuePair<string, string> header in Headers)
+                builder.Append($"{header.Key}: {header.Value}\r\n");
 
             builder.Append("\r\n");
             builder.Append(Body);
