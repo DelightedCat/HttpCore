@@ -33,6 +33,7 @@ Try placing a file called `index.html` in there and visit `localhost` while the 
 In case you want to contribute to this project, feel free to do so!
 Keep in mind that there are some guidelines though.
 
+- Commits need to be done on a branch that is based on `develop`;
 - Use explicit type declarations and avoid using `var`;
 - Use tabs of 4 spaces wide. That's right, no spaces! The `.editorconfig` should handle this for you though;
 - Try to make as few changes to files such as `.gitignore` and `.editorconfig` as possible;
