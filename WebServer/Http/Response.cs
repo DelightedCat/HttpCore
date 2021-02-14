@@ -53,11 +53,12 @@ namespace WebServer.Http
 
         public override string ToString()
         {
-            StringBuilder builder = new StringBuilder();
-            builder.Append(string.Format("HTTP/1.1 {0} {1}\r\n", Status, responseCodes[Status] ?? string.Empty));
+            var builder = new StringBuilder();
+            
+            builder.Append($"HTTP/1.1 {Status.ToString()} {responseCodes[Status] ?? string.Empty}\r\n");
 
-            foreach (KeyValuePair<string, string> pair in Headers)
-                builder.Append(string.Format("{0}: {1}\r\n", pair.Key, pair.Value));
+            foreach (var (key, value) in Headers)
+                builder.Append($"{key}: {value}\r\n");
 
             builder.Append("\r\n");
             builder.Append(Body);
