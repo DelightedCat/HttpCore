@@ -66,9 +66,7 @@ namespace HttpCore
                 string requestFilePath = Path.Combine(_config.DocumentRoot, requestFileName);
 
                 Response response = Response.FromFilePath(requestFilePath);
-
-                response.Headers.Add("Server", "DelightedCat/1.0.0");
-                response.Headers.Add("Connection", "keep-alive");
+                response.Headers.Add("Server", "HttpCore/1.0.0");
 
                 if (File.Exists(requestFilePath))
                     response.Body = File.ReadAllText(requestFilePath);
